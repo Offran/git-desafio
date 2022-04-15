@@ -1,0 +1,64 @@
+O que é um git?
+>Sistema de versão controlado.
+
+Porque precisamos do git?
+>Trabalhar simultaneamente. Uma boa forma de trabalho colaborativo.
+>Ele é seguro, posso voltar às versões anteriores e tomar outros caminhos, além de ter as anotações de o que mudou.
+>Armazenar e versionar os arquivos.
+Cada arquivo é um "blob" e cada blob gera um "hash". O hashs são códigos que foram criptografados dos arquivos para esses passwords. Eles diferem um código inteiro, mesmo com uma vírgula diferente.
+
+Alguns comandos substanciais do git:
+>Git push: Envia o conteúdo do local para o remoto.
+>Git diff: mostra a diferença entre um branch e o master.
+>Git pull: combinação de fetch e merge. (fetch baixa o conteúdo de um  repositório remoto).
+>Git reset <commit>: removo um commit até o selecionado. Para este temos três tipos, o git reset --soft, --mixed, --hard.
+Soft: retira o arquivo selecionado, mas mantenho ele na minha área.
+Mixed: retiro o arquivo selecionado, como se eu ainda não tivesse puxado ele.
+Hard: retiro o arquivo selecionado, como se nunca tivesse feito ele.
+>Git reflog: Desfaz o git reset, inclusive o git reset hard.
+>Git clone: Faz um repositório remoto em meu repositório local. É a maneira mais fácil, rápida e prática de iniciar um  git.
+> Git branch -M <main>: modifica o nome do meu master para o dito <>.
+>PARA MAIS DÚVIDAS:
+Git <> --help:
+A parte <> é para pesquisar ajuda apenas sobre a referida. Aqui o sistema mostra os comandos potencialmente esquecidos e/ou desconhecidos.
+
+--------------------------------
+
+Mexendo no git:
+>Git init: Cria um repositório vazio dentro da pasta selecionada.
+>Git status: eu vejo o que tem dentro do meu git e o que já foi adicionado. Vermelho ainda não foi, enquanto verde já está adicionado.
+>Git add: adiciono uma ou mais pastas dentro da pasta selecionada do meu git init, para fazer parte do meu git. Usar "git add -A ou --all" para adicionar tudo da pasta.
+
+>Git stash: É uma área onde é possível armazenar código sem a necessidade de realizar um commit.
+>Git Stash branch: Cria um branch para o git stash.
+>Git stash drop: retira da área de stash e coloca na área do git de volta.
+>Git stash save: salva o arquivo nomeado. Por exemplo: "Git stash save <xxx.txt>"
+>Git stash list: mostra os arquivos salvos no git stash.
+>Git stash apply stash@{0}: copia os arquivos do stash para o nosso stage (a pasta do git).
+>Git stash pop: retira o último elemento adicionado na área do stash.
+
+>Git log: Mostra o último status alterado do meu git. Git log mostra quantos commits já foram usados.
+> Git log --oneline: É um gitlog facilitado para a interpretação, indo de forma mais simples nos pontos.
+>Git log --oneline --decorate: Ele mostra as informações de branchs, também traz a informação "head". Head é como um cérebro por trás dos olhos que apontam para um blob específico.
+>Git log --oneline --decorate --all: Mostrará todos os ramos, do main a quantos branchs temos.
+Git log --oneline --decorate --all --graph: Mostra os hashs da árvore, em quais blobs elas se separaram e em mais de um branch.
+
+Git commit: Git commit -m <alteração x>. Com essa mensagem eu envio para o meu git o arquivo alterado.
+
+O que é o Git  branch?
+É uma nova linha de desenvolvimento, como uma das ramificações principais da nossa árvore. Ele pode ser usado simultaneamente, como um outro ramo dessa árvore. Branch é uma seta que apontará onde o usuário estiver no momento, "branch 1", "branch 2", etc.
+>Para criar um  novo branch:
+>Git branch feature 1 (cria um "ramo" "feature 1")
+>Git checkout: para trocar de ramo, saindo de master para ir para "feature 1".
+>Git branch feature 2 + git checkout feature 2 para criar o branch 2 e apontar o head para ele. O comando "Git checkout-b feature 2" faz tudo isso direto.
+
+Git merge:
+>move onde o usuário "head" está. Por exemplo: Git merge feature 1""" me levará para o branch 1.
+>A mensagem "fast-foward" aparecerá se não houver nenhum tipo de divergência ao trocar o blob que o usuário aponta.
+Caso haja conflito:
+>Se eu deixo uma pasta X e uma pasta 2X em cada seguimento, então ele dirá que tem conflito, nesse caso não aparecerá o fast-foward.
+>Git status vai mostrar onde é o erro. Ao me mostrar o erro eu posso verificar para saber qual eu mantenho.
+
+Demais comandos para auxílio podem ser vistos em:
+>git <> --help
+A parte <> é para pesquisar ajuda apenas para a parte especificada, podendo ser qualquer coisa de git ali para pesquisa.
